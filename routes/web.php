@@ -4,6 +4,7 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MpesaSTKPUSHController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -22,6 +23,9 @@ use Inertia\Inertia;
 Route::get('/',[IndexController::class, 'showIndexPage']);
 Route::get('/events', [EventsController::class, 'index'])->name('events');
 Route::get('/events/{id}', [EventsController::class,'show'])->name('events.show');
+//search event route
+Route::get('search/events', SearchController::class)->name('search.events');
+
 Route::post('/makepayment', [PaymentController::class,'redirectToProvider']);
 
 Route::post('/v1/mpesatest/stk/push', [MpesaSTKPUSHController::class, 'STKPush']);
