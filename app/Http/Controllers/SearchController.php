@@ -29,6 +29,7 @@ class SearchController extends Controller
             $request->flashOnly('q');
             try{
                 $events = $this->eventRepo->searchEvent($request->q, 6);
+                Log::info("***** The search term has passed ******", [ 'events' => $events]);
             } catch(\Exception $e) {
                 Log::error($e->getMessage());
                 return back()->with('error', 'Error connecting to Algolia Server');

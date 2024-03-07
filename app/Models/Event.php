@@ -12,6 +12,13 @@ class Event extends Model
 {
     use HasFactory, Searchable;
 
+    public function toSearchableArray(): array
+    {
+        return [
+            'name' => $this->name,
+        ];
+    }
+
     protected $guarded = [];
 
     public function category(): BelongsTo
