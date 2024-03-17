@@ -1,7 +1,7 @@
 import { StepperContext } from '@/contexts/StepperContext';
 import React, { useContext } from 'react'
 
-function Account() {
+function Admission() {
   const {userData, setUserData} = useContext(StepperContext);
 
   const handleChange = (e) => {
@@ -28,4 +28,4 @@ function Account() {
   )
 }
 
-export default Account;
+export default Admission;

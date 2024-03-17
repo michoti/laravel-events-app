@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import TextInput from "./TextInput";
 import Stepper from "./Stepper";
 import StepperControl from "./StepperControl";
-import Account from "./steps/Account";
+import Admission from "./steps/Admission";
 import Complete from "./steps/Complete";
 import PersonalDetails from "./steps/PersonalDetails";
 import { StepperContext } from "@/contexts/StepperContext";
@@ -27,7 +27,7 @@ function BuyTicket() {
     const displayStep = (step) => {
         switch(step) {
             case 1:
-                return <Account />
+                return <Admission />
             case 2:
                 return <PersonalDetails />
             case 3:
